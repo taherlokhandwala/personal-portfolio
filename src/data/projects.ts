@@ -27,7 +27,7 @@ export const projects: Project[] = [
       'Document Search: Fast, regex-based filtering to find specific books or documents in your library.'
     ],
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Shadcn UI', 'MongoDB', 'Vercel'],
-    imageUrl: '/assets/globe-books.png',
+    imageUrl: '/assets/decipher/globe-books.png',
     images: [
       '/assets/decipher/decipher-home.png',
       '/assets/decipher/decipher-conversation-a.png',
@@ -39,7 +39,7 @@ export const projects: Project[] = [
       '/assets/decipher/decipher-working.png',
       '/assets/decipher/decipher-plans.png',
     ],
-    deployLink: 'https://decipher-ai.vercel.app',
+    deployLink: 'https://de-cipher-ten.vercel.app',
     githubLink: 'https://github.com/taherlokhandwala/decipher'
   }
 ];
