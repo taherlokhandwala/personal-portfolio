@@ -1,20 +1,15 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Taher Lokhandwala – Personal Portfolio
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0d288b2a-fa1e-46a0-a69f-c2b8f1255936/deploy-status)](https://app.netlify.com/projects/taherlokhandwala/deploys)
 
-# Run and deploy your AI Studio app
+My personal portfolio website is built with React and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+Check out the live version here: [taherlokhandwala.netlify.app](https://taherlokhandwala.netlify.app)
 
-View your app in AI Studio: https://ai.studio/apps/e17105b5-fa6f-43a0-8a00-ea4e07d83f08
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Tech Stack
+- **Framework:** [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Animation:** [Motion](https://motion.dev/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Navigation:** [React Router](https://reactrouter.com/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)

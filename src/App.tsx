@@ -397,7 +397,7 @@ const Home = () => {
 
           <footer className="max-w-md pb-16 text-sm text-muted sm:pb-0">
             <p>
-              Designed in <span className="font-semibold text-[#864FFF]">Figma</span> and coded in <span className="font-semibold text-[#0078D4]">WebStorm</span>. Built with <span className="font-semibold text-[#57C4DC]">React</span> and <span className="font-semibold text-[#00BCFF]">Tailwind CSS</span>, deployed with <span className="font-semibold text-[#000000]">Vercel</span>.
+              Designed in <span className="font-semibold text-[#864FFF]">Figma</span> and coded in <span className="font-semibold text-[#0078D4]">WebStorm</span>. Built with <span className="font-semibold text-[#57C4DC]">React</span> and <span className="font-semibold text-[#00BCFF]">Tailwind CSS</span>, deployed with <span className="font-semibold text-[#0ABDBA]">Netlify</span>.
             </p>
           </footer>
         </main>
