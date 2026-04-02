@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f8fafc; /* Slate 50 */
+  --color-foreground: #0f172a; /* Slate 900 */
+  --color-muted: #475569; /* Slate 600 */
+  --color-accent: #0284c7; /* Sky 700 */
+  --color-accent-glow: rgba(2, 132, 199, 0.06);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-accent/30 selection:text-accent;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+.glow-cursor {
+  background: radial-gradient(
+    300px circle at var(--x) var(--y),
+    var(--color-accent-glow),
+    transparent 70%
+  );
+}
