@@ -1,9 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { Github, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, Play, Pause, X } from 'lucide-react';
-import { projects } from '../data/projects';
-import { cn } from '../lib/utils';
+import React, { useState, useEffect } from "react";
+import { useParams, Link, Navigate } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Github,
+  ExternalLink,
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+  X,
+} from "lucide-react";
+import { projects } from "../data/projects";
+import { cn } from "../lib/utils";
 
 const Carousel = ({ images }: { images: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,7 +20,8 @@ const Carousel = ({ images }: { images: string[] }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const next = () => setCurrentIndex((prev) => (prev + 1) % images.length);
-  const prev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  const prev = () =>
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   const handleNext = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -34,13 +44,13 @@ const Carousel = ({ images }: { images: string[] }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen) return;
-      if (e.key === 'ArrowRight') next();
-      if (e.key === 'ArrowLeft') prev();
-      if (e.key === 'Escape') setIsModalOpen(false);
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "Escape") setIsModalOpen(false);
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isModalOpen, images.length]);
 
   return (
@@ -66,13 +76,13 @@ const Carousel = ({ images }: { images: string[] }) => {
         <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           <button
             onClick={handlePrev}
-            className="p-2 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors pointer-events-auto"
+            className="p-2 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors pointer-events-auto cursor-pointer"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={handleNext}
-            className="p-2 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors pointer-events-auto"
+            className="p-2 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors pointer-events-auto cursor-pointer"
           >
             <ChevronRight size={24} />
           </button>
@@ -84,7 +94,11 @@ const Carousel = ({ images }: { images: string[] }) => {
             className="p-1.5 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors"
             aria-label={isPlaying ? "Pause autoplay" : "Start autoplay"}
           >
-            {isPlaying ? <Pause size={14} fill="currentColor" /> : <Play size={14} fill="currentColor" />}
+            {isPlaying ? (
+              <Pause size={14} fill="currentColor" />
+            ) : (
+              <Play size={14} fill="currentColor" />
+            )}
           </button>
           <div className="flex gap-2">
             {images.map((_, i) => (
@@ -96,7 +110,9 @@ const Carousel = ({ images }: { images: string[] }) => {
                 }}
                 className={cn(
                   "w-2 h-2 rounded-full transition-all",
-                  i === currentIndex ? "bg-accent w-6" : "bg-muted/50 hover:bg-muted"
+                  i === currentIndex
+                    ? "bg-accent w-6"
+                    : "bg-muted/50 hover:bg-muted",
                 )}
               />
             ))}
@@ -115,14 +131,20 @@ const Carousel = ({ images }: { images: string[] }) => {
           >
             <div className="absolute inset-x-4 flex items-center justify-between z-10 pointer-events-none">
               <button
-                onClick={(e) => { e.stopPropagation(); prev(); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prev();
+                }}
                 className="p-3 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors pointer-events-auto"
                 aria-label="Previous image"
               >
                 <ChevronLeft size={32} />
               </button>
               <button
-                onClick={(e) => { e.stopPropagation(); next(); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  next();
+                }}
                 className="p-3 rounded-full bg-background/50 backdrop-blur-sm text-foreground hover:bg-background/80 transition-colors pointer-events-auto"
                 aria-label="Next image"
               >
@@ -214,14 +236,18 @@ export const ProjectDetails = () => {
             className="space-y-6"
           >
             <section>
-              <h2 className="text-lg font-bold text-foreground mb-3">Overview</h2>
+              <h2 className="text-lg font-bold text-foreground mb-3">
+                Overview
+              </h2>
               <p className="text-muted leading-relaxed">
                 {project.fullDescription}
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-foreground mb-3">Key Functionality</h2>
+              <h2 className="text-lg font-bold text-foreground mb-3">
+                Key Functionality
+              </h2>
               <ul className="space-y-2">
                 {project.functionality.map((item, i) => (
                   <li key={i} className="flex items-start text-muted text-sm">
@@ -242,7 +268,7 @@ export const ProjectDetails = () => {
             transition={{ duration: 0.6 }}
           >
             <Carousel images={project.images} />
-            <div className="flex flex-wrap gap-4 pt-6">
+            <div className="flex flex-wrap gap-4 pt-6 justify-center">
               <a
                 href={project.deployLink}
                 target="_blank"
